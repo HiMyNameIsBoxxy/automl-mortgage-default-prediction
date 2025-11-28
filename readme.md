@@ -4,7 +4,7 @@ This notebook uses **H2O AutoML** to model mortgage loan default using a cleaned
 
 ---
 
-## 📘 Notebook  
+## Notebook  
 **[AutoML.ipynb](AutoML.ipynb)**
 
 ---
