@@ -18340,20 +18340,20 @@ KS (RUS): 0.2223
 Baseline models captured <strong>almost no defaults (TP ~25–42)</strong>.</p>
 <h3 id="AutoML-Model"><strong>AutoML Model</strong><a class="anchor-link" href="#AutoML-Model">¶</a></h3><p><strong>Unbalanced AutoML</strong></p>
 <ul>
-<li>TP = 2,744</li>
-<li>FN = 1,902</li>
-<li>FP = 7,088</li>
-<li>TN = 12,266</li>
+<li>TP = 3,000</li>
+<li>FN = 1,646</li>
+<li>TN = 11,227</li>
+<li>FP = 8,127</li>
 </ul>
 <p><strong>Balanced (balance_classes=True) AutoML</strong></p>
 <ul>
-<li>TP = 2,960</li>
-<li>FN = 1,686</li>
-<li>FP = 8,052</li>
-<li>TN = 11,302</li>
+<li>TP = 2,883</li>
+<li>FN = 1,763</li>
+<li>TN = 11,584</li>
+<li>FP = 7,770</li>
 </ul>
 <p><strong>Interpretation:</strong><br/>
-AutoML massively improved recall compared to Module 9 (TP now ~2,700–3,000 vs 25–42).</p>
+AutoML massively improved recall compared to baseline models (TP now ~2,800–3,000 vs 25–42).</p>
 <h3 id="AutoML-Model-+-Sampling-Techniques"><strong>AutoML Model + Sampling Techniques</strong><a class="anchor-link" href="#AutoML-Model-+-Sampling-Techniques">¶</a></h3><p><strong>SMOTE AutoML</strong></p>
 <ul>
 <li>TP = 495</li>
@@ -18391,11 +18391,11 @@ AutoML massively improved recall compared to Module 9 (TP now ~2,700–3,000 vs 
 </tr>
 <tr>
 <td>AutoML Unbalanced</td>
-<td><strong>0.3791</strong></td>
+<td><strong>0.3804</strong></td>
 </tr>
 <tr>
 <td>AutoML Balanced</td>
-<td><strong>0.3781</strong></td>
+<td><strong>0.3769</strong></td>
 </tr>
 <tr>
 <td>AutoML + SMOTE</td>
@@ -18430,11 +18430,11 @@ AutoML massively improved recall compared to Module 9 (TP now ~2,700–3,000 vs 
 </tr>
 <tr>
 <td>AutoML Unbalanced</td>
-<td>~0.7023</td>
+<td>~0.652</td>
 </tr>
 <tr>
 <td>AutoML Balanced</td>
-<td>~0.6930</td>
+<td>~0.651</td>
 </tr>
 <tr>
 <td>AutoML + SMOTE</td>
@@ -18448,7 +18448,7 @@ AutoML massively improved recall compared to Module 9 (TP now ~2,700–3,000 vs 
 </table>
 <p><strong>Interpretation:</strong></p>
 <ul>
-<li><strong>Best AUC: AutoML Unbalanced (~0.70+)</strong></li>
+<li><strong>Best AUC: AutoML balanced (~0.651)</strong></li>
 <li>Sampling methods do NOT improve AUC.</li>
 </ul>
 <h2 id="Precision%E2%80%93Recall-Comparison"><strong>Precision–Recall Comparison</strong><a class="anchor-link" href="#Precision%E2%80%93Recall-Comparison">¶</a></h2><h3 id="Baseline-Default-Rate-%E2%89%88-19%25">Baseline Default Rate ≈ 19%<a class="anchor-link" href="#Baseline-Default-Rate-%E2%89%88-19%25">¶</a></h3><p><strong>Baseline Model</strong></p>
@@ -18457,7 +18457,7 @@ AutoML massively improved recall compared to Module 9 (TP now ~2,700–3,000 vs 
 </ul>
 <p><strong>AutoML Model</strong></p>
 <ul>
-<li>AutoML maintains <strong>30–40% precision</strong> at moderate recall.</li>
+<li>AutoML maintains <strong>30–40% precision</strong> at moderate recall levels.</li>
 </ul>
 <p><strong>AutoML + Sampling</strong></p>
 <ul>
@@ -18476,19 +18476,19 @@ UnderSampling improves <strong>real-world usefulness</strong> by detecting high-
 <tbody>
 <tr>
 <td>Decision Tree</td>
-<td><strong>~1.06</strong></td>
+<td><strong>1.06</strong></td>
 </tr>
 <tr>
 <td>Logistic Regression</td>
-<td><strong>~1.18</strong></td>
+<td><strong>1.18</strong></td>
 </tr>
 <tr>
 <td>AutoML Unbalanced</td>
-<td><strong>~2.69–2.86</strong></td>
+<td><strong>1.805</strong></td>
 </tr>
 <tr>
 <td>AutoML Balanced</td>
-<td><strong>~2.86–2.91</strong></td>
+<td><strong>1.823</strong></td>
 </tr>
 <tr>
 <td>AutoML + SMOTE</td>
@@ -18502,7 +18502,7 @@ UnderSampling improves <strong>real-world usefulness</strong> by detecting high-
 </table>
 <p><strong>Interpretation:</strong></p>
 <ul>
-<li><strong>Best Lift: AutoML Balanced (≈2.9)</strong></li>
+<li><strong>Best Lift: AutoML Balanced (≈1.823)</strong></li>
 <li>AutoML + UnderSampling &gt; SMOTE but still far below AutoML only.</li>
 </ul>
 <h2 id="KS-Statistic"><strong>KS Statistic</strong><a class="anchor-link" href="#KS-Statistic">¶</a></h2><table>
@@ -18522,8 +18522,12 @@ UnderSampling improves <strong>real-world usefulness</strong> by detecting high-
 <td>0.2207</td>
 </tr>
 <tr>
-<td>AutoML</td>
-<td><strong>~0.26–0.29</strong></td>
+<td>AutoML Unbalanced</td>
+<td><strong>0.2271</strong></td>
+</tr>
+<tr>
+<td>AutoML Balanced</td>
+<td><strong>0.2243</strong></td>
 </tr>
 <tr>
 <td>AutoML + SMOTE</td>
@@ -18540,7 +18544,7 @@ UnderSampling improves <strong>real-world usefulness</strong> by detecting high-
 <li>Best KS = <strong>AutoML only</strong></li>
 <li>Sampling does not improve KS.</li>
 </ul>
-<h1 id="Conclusion"><strong>Conclusion</strong><a class="anchor-link" href="#Conclusion">¶</a></h1><h3 id="Best-performing-model:-AutoML-with-balance_classes=True"><strong>Best performing model: AutoML with balance_classes=True</strong><a class="anchor-link" href="#Best-performing-model:-AutoML-with-balance_classes=True">¶</a></h3><p>It provides the <strong>highest Lift (≈2.9), strongest KS (≈0.29), and excellent AUC (~0.69–0.70)</strong> while maintaining balanced recall and precision.</p>
+<h1 id="Conclusion"><strong>Conclusion</strong><a class="anchor-link" href="#Conclusion">¶</a></h1><h3 id="Best-performing-model:-AutoML-with-balance_classes=True"><strong>Best performing model: AutoML with balance_classes=True</strong><a class="anchor-link" href="#Best-performing-model:-AutoML-with-balance_classes=True">¶</a></h3><p>It provides the <strong>highest Lift (≈1.823), strongest KS (0.2271), and excellent AUC (~0.651)</strong> while maintaining balanced recall and precision.</p>
 </div>
 </div>
 </div>
